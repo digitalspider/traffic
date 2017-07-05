@@ -1,0 +1,8 @@
+{
+	"config": {
+	},
+	"lights":[
+		{"id":1,"state":"GREEN","orientation":"NORTH_SOUTH","linkedLightId":2},
+		{"id":2,"state":"RED","orientation":"EAST_WEST","linkedLightId":1}
+	]
+}

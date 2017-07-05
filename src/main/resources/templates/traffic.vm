@@ -1,0 +1,41 @@
+<html>
+
+<head>
+#if($simStarted)
+	<script language="javascript">
+		setTimeout(function() {
+		  location.reload();
+		}, 3000);
+	</script>
+#end
+</head>
+
+<body>
+#if($simStarted)
+	<p>Note: This page reloads every 3 seconds</p>
+	<p>After 27 seconds the RED light will turn orange, and 3 seconds more and it will turn RED</p>
+#end
+	
+	<h1>Lights</h1>
+	#if($simStarted)
+	<p>Elapsed Time in seconds: $elapsedTime</p>
+	#end
+	<ul>
+	#foreach($light in $lights)
+		<li><span style="color: $light.state"><a href="/traffic/light/$light.id">Light $light.id</a> = $light = <a href="/traffic/switch/$light.id">change</a></span></li>
+	#end
+	</ul>
+	
+	<br/><br/>
+	
+	<h1>Actions</h1>
+	<ul>
+		#if($simStarted)
+			<li><a href='/traffic/stop'>Stop simulation</a></li>
+		#else
+			<li><a href='/traffic/start'>Start simulation</a></li>
+		#end
+	</ul>
+
+</body>
+</html>
