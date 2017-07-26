@@ -1,1 +1,1 @@
-java -jar target/traffic-app-0.1.0.jar
+java -jar -Dserver.port=8090 target/traffic-app-0.1.0.jar
